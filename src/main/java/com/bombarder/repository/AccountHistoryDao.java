@@ -9,6 +9,5 @@ import java.math.BigDecimal;
 public interface AccountHistoryDao extends JpaRepository<AccountHistory, Long> {
 
     AccountHistory findByUser(User user);
-
     AccountHistory findByDate(BigDecimal date);
 }
