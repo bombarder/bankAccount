@@ -29,7 +29,7 @@ public class UserServiceImpl implements UserService{
 
     @Override
     public User findById(long id) {
-        return userDao.findById(id);
+        return userDao.findOne(id);
     }
 
     @Override
@@ -40,11 +40,6 @@ public class UserServiceImpl implements UserService{
     @Override
     public User findByEmail(String email) {
         return userDao.findByEmail(email);
-    }
-
-    @Override
-    public void update(User user) {
-        userDao.update(user);
     }
 
     @Override

@@ -25,7 +25,7 @@ public class AccountHistoryServiceImpl implements AccountHistoryService {
 
     @Override
     public AccountHistory findById(long id) {
-        return accountHistoryDao.findById(id);
+        return accountHistoryDao.findOne(id);
     }
 
     @Override

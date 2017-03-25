@@ -13,6 +13,5 @@ public interface AccountService {
     Account findByOwner(User user);
     Account findByDate(BigDecimal date);
     Account create(Account account);
-    void update(Account account);
     void delete(Account account);
 }

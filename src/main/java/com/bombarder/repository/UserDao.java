@@ -1,16 +1,11 @@
 package com.bombarder.repository;
 
 import com.bombarder.entity.User;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-import java.util.List;
+public interface UserDao extends JpaRepository<User, Long> {
 
-public interface UserDao {
-
-    List<User> findAll();
-    User findById(long id);
-    User findByLogin(String login);
     User findByEmail(String email);
-    User save(User user);
-    void update(User user);
-    void delete(User user);
+
+    User findByLogin(String login);
 }

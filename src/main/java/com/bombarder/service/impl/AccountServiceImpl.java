@@ -25,12 +25,12 @@ public class AccountServiceImpl implements AccountService {
 
     @Override
     public Account findById(long id) {
-        return accountDao.findById(id);
+        return accountDao.findOne(id);
     }
 
     @Override
     public Account findByOwner(User user) {
-        return accountDao.findByOwner(user);
+        return accountDao.findByUser(user);
     }
 
     @Override
@@ -41,11 +41,6 @@ public class AccountServiceImpl implements AccountService {
     @Override
     public Account create(Account account) {
         return accountDao.save(account);
-    }
-
-    @Override
-    public void update(Account account) {
-        accountDao.update(account);
     }
 
     @Override

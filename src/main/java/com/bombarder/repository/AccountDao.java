@@ -2,17 +2,13 @@ package com.bombarder.repository;
 
 import com.bombarder.entity.Account;
 import com.bombarder.entity.User;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.math.BigDecimal;
-import java.util.List;
 
-public interface AccountDao {
+public interface AccountDao extends JpaRepository<Account,Long>{
 
-    List<Account> findAll();
-    Account findById(long id);
-    Account findByOwner(User user);
+    Account findByUser(User user);
+
     Account findByDate(BigDecimal date);
-    Account save(Account account);
-    void update(Account account);
-    void delete(Account account);
 }
