@@ -1,12 +1,20 @@
 package com.bombarder.entity;
 
+import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
+@Entity
+@Table(name = "HISTORY")
 public class AccountHistory {
 
+    @Id
+    @Column(name = "ID")
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    @ManyToOne(fetch = FetchType.LAZY)
     private User holder;
+    @OneToOne(fetch = FetchType.LAZY)
     private Account account;
     private BigDecimal balance;
     private LocalDateTime changeTime;
