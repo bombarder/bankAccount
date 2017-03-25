@@ -27,8 +27,7 @@ public class JDBCConnection {
             System.out.println("Creating statement...");
             stmt = conn.createStatement();
             String sql = "SELECT idUser, login, name, email FROM User";
-            ResultSet rs;
-            rs = stmt.executeQuery(sql);
+            ResultSet rs = stmt.executeQuery(sql);
 
             //STEP 5: Extract data from result set
             while (rs.next()) {
