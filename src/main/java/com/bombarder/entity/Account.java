@@ -14,7 +14,9 @@ public class Account {
     private Long id;
     @OneToOne
     private User owner;
+    @Column(name = "DATE", nullable = false)
     private LocalDate datePlaced;
+    @Column(name = "BALANCE", nullable = false)
     private BigDecimal startBalance;
 
     public BigDecimal getStartBalance() {
