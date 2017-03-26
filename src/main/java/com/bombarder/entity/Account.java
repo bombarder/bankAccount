@@ -12,11 +12,9 @@ public class Account {
     @Column(name = "ID")
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    @Transient
+    @OneToOne
     private User owner;
-    @Transient
     private LocalDate datePlaced;
-    @Transient
     private BigDecimal startBalance;
 
     public BigDecimal getStartBalance() {

@@ -4,16 +4,18 @@ import com.bombarder.entity.Account;
 import com.bombarder.entity.User;
 import com.bombarder.repository.AccountDao;
 import com.bombarder.service.AccountService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.List;
 
 @Service
 public class AccountServiceImpl implements AccountService {
 
     private AccountDao accountDao;
-
+    @Autowired
     public AccountServiceImpl(AccountDao accountDao) {
         this.accountDao = accountDao;
     }
@@ -30,12 +32,12 @@ public class AccountServiceImpl implements AccountService {
 
     @Override
     public Account findByOwner(User user) {
-        return accountDao.findByUser(user);
+        return accountDao.findByOwner(user);
     }
 
     @Override
-    public Account findByDate(BigDecimal date) {
-        return accountDao.findByDate(date);
+    public Account findByDate(LocalDate date) {
+        return accountDao.findByDatePlaced(date);
     }
 
     @Override

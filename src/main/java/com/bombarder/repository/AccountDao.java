@@ -5,9 +5,10 @@ import com.bombarder.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 
 public interface AccountDao extends JpaRepository<Account,Long>{
 
-    Account findByUser(User user);
-    Account findByDate(BigDecimal date);
+    Account findByOwner(User user);
+    Account findByDatePlaced(LocalDate datePlaced);
 }
