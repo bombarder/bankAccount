@@ -10,11 +10,8 @@ public class User {
     @Column(name = "ID")
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    @Column(name = "LOGIN", nullable = false)
     private String login;
-    @Column(name = "NAME")
     private String name;
-    @Column(name = "EMAIL")
     private String email;
 
     public Long getId() {
