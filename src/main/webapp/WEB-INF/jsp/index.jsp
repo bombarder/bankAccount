@@ -1,40 +1,48 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
-
-<html>
-
+<!DOCTYPE html>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="c" uri="http://www.springframework.org/tags" %>
+<html lang="en">
 <head>
-    <title>Детский клуб</title>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
 
+    <!-- Access the bootstrap Css like this,
+        Spring boot will handle the resource mapping automcatically -->
+    <link rel="stylesheet" type="text/css" href="webjars/bootstrap/3.3.7/css/bootstrap.min.css" />
+
+    <!--
+	<spring:url value="/css/main.css" var="springCss" />
+	<link href="${springCss}" rel="stylesheet" />
+	 -->
+    <c:url value="/css/main.css" var="jstlCss" />
+    <link href="${jstlCss}" rel="stylesheet" />
+
+</head>
 <body>
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-sm-12">
-            <div class="">
-                <h2>Kids Club - Diving into the JAVA course</h2>
-                <h3>Outcome project</h3>
-            </div>
+
+<nav class="navbar navbar-inverse">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Spring Boot</a>
         </div>
-        <div class="row text-center">
-            <img src="/kidsclub/images/welcome.png" width="400"/>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
         </div>
     </div>
-</div>
+</nav>
 
 <div class="container">
 
-    <c:if test="${pageContext.request.userPrincipal.name != null}">
-        <form id="logoutForm" method="POST" action="${contextPath}/kidsclub/login">
-            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-        </form>
-    </c:if>
+    <div class="starter-template">
+        <h1>Spring Boot Web JSP Example</h1>
+        <h2>Message: My bank</h2>
+    </div>
+
 </div>
-<!-- /container -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script src="${contextPath}/resources/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 </body>
+
 </html>
