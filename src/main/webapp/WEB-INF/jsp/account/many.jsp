@@ -25,7 +25,7 @@
                         <spring:url value="/account" var="userLink">
                             <spring:param name="id" value="${user.id}"/>
                         </spring:url>
-                        <td><a href="${userLink}">${user.owner}</a></td>
+                        <td><a href="${userLink}">${user.owner.name}</a></td>
                         <td>${user.datePlaced}</td>
                         <td>${user.startBalance}</td>
                     </tr>

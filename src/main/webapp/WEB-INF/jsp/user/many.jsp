@@ -35,7 +35,7 @@
         </div>
 
         <div class="col-md-4 col-sm-12">
-            <spring:url value="/account/add" var="createUrl"/>
+            <spring:url value="/user/add" var="createUrl"/>
             <form action="${createUrl}" method="post">
                 <input type="text" name="owner" class="form-control"/>
                 <input type="text" name="Open Date" class="form-control"/>
