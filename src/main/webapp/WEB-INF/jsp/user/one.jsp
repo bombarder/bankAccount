@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Account</title>
+    <title>User</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script>
         $(function () {
@@ -30,20 +30,20 @@
             <table class="table table-bordered table-hover">
                 <thead>
                 <tr class="success">
-                    <th>Name</th>
-                    <th>date placed</th>
-                    <th>balance</th>
+                    <th>name</th>
+                    <th>login</th>
+                    <th>email</th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr>
-                    <td>${account.owner}</td>
-                    <td>${account.datePlaced}</td>
-                    <td>${account.startBalance}</td>
+                    <td>${user.name}</td>
+                    <td>${user.login}</td>
+                    <td>${user.email}</td>
                 </tr>
 
                 <input id="user-id" type="hidden" value="1">
-                <input id="item-id" type="hidden" value="${entertainment.id}">
+                <input id="item-id" type="hidden" value="${user.id}">
                 <div id="container"></div>
                 </tbody>
             </table>

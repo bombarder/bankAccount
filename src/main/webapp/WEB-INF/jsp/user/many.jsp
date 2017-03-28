@@ -4,7 +4,7 @@
 
 <html>
 <head>
-    <title>Account</title>
+    <title>User</title>
 </head>
 <body>
 <jsp:include page="/WEB-INF/jsp/header.jsp"/>
@@ -14,20 +14,20 @@
             <table class="table table-bordered table-hover">
                 <thead>
                 <tr class="success">
-                    <th>Name</th>
-                    <th>Date Placed</th>
-                    <th>Balance</th>
+                    <th>login</th>
+                    <th>name</th>
+                    <th>email</th>
                 </tr>
                 </thead>
                 <tbody>
-                <c:forEach var="user" items="${someAccount}">
+                <c:forEach var="user" items="${users}">
                     <tr>
-                        <spring:url value="/account" var="userLink">
+                        <spring:url value="/user" var="userLink">
                             <spring:param name="id" value="${user.id}"/>
                         </spring:url>
-                        <td><a href="${userLink}">${user.owner}</a></td>
-                        <td>${user.datePlaced}</td>
-                        <td>${user.startBalance}</td>
+                        <td><a href="${userLink}">${user.login}</a></td>
+                        <td>${user.name}</td>
+                        <td>${user.email}</td>
                     </tr>
                 </c:forEach>
                 </tbody>
